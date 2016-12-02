@@ -1,0 +1,8 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+RewriteRule ^movie$   RestController.php?view=movieall [nc,qsa]
+RewriteRule ^movie/([0-9]+)$   RestController.php?view=moviesingle&id=$1 [nc,qsa]
+RewriteRule ^showtime/([0-9]+)$   RestController.php?view=showtime&id=$1 [nc,qsa]
