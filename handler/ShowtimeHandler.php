@@ -1,9 +1,9 @@
 <?php
-// require_once("../config/Rest.php");
-// require_once("../config/Connect.php");
-// require_once("../model/Showtime.php");
+require_once("/config/Rest.php"); //Not use now
+require_once("/config/Connect.php");
+require_once("/model/Showtime.php");
 
-Class ShowtimeHandler { //extends Rest {
+Class ShowtimeHandler extends Rest {
 	public function find_all() {
 		//hander here
 	}
