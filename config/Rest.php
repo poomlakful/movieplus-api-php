@@ -7,6 +7,11 @@ class Rest {
 	
 	private $httpVersion = "HTTP/1.1";
 
+	public function show($raw_data) {
+		header('Content-Type: application/json');
+		echo json_encode($raw_data);		
+	}	
+
 	public function setHttpHeaders($contentType, $statusCode){
 		
 		$statusMessage = $this -> getHttpStatusMessage($statusCode);

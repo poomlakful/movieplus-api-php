@@ -13,8 +13,8 @@ Class MovieHandler extends Rest {
 
 		if ($result->num_rows > 0) {
 		    while($row = $result->fetch_assoc()) {
-		        //echo "id = ".$row["id"]." : name = ".$row["name"];
-		        $item = new Movie($row["id"], $row["name"], $row["detail"], $row["poster"], $row["trailer"], $row["type"], $row["time"], $row["director"], $row["status"]);
+		        //echo "id = ".$row["mid"]." : name = ".$row["mname"];
+		        $item = new Movie($row["mid"], $row["mname"], $row["detail"], $row["poster"], $row["trailer"], $row["type"], $row["mtime"], $row["director"], $row["status"]);
 		    	array_push($movie_list,$item);
 		    }
 		} else {
@@ -28,13 +28,13 @@ Class MovieHandler extends Rest {
 	public function find_by_id($id) {
 		$movie;
 		$conn = new Connect();
-		$sql = "SELECT * FROM movie WHERE id = ".$id;
+		$sql = "SELECT * FROM movie WHERE mid = ".$id;
 		$result = $conn->query($sql);		
 
 		if ($result->num_rows > 0) {
 		    while($row = $result->fetch_assoc()) {
-		        //echo "id = ".$row["id"]." : name = ".$row["name"];
-		        $movie = new Movie($row["id"], $row["name"], $row["detail"], $row["poster"], $row["trailer"], $row["type"], $row["time"], $row["director"], $row["status"]);
+		        //echo "mid = ".$row["mid"]." : name = ".$row["mname"];
+		        $movie = new Movie($row["mid"], $row["mname"], $row["detail"], $row["poster"], $row["trailer"], $row["type"], $row["mtime"], $row["director"], $row["status"]);
 		    }
 		} else {
 		    echo "0 results";
@@ -43,10 +43,5 @@ Class MovieHandler extends Rest {
 
 		$this->show($movie);
 	}
-	
-	private function show($raw_data) {
-		header('Content-Type: application/json');
-		echo json_encode($raw_data);		
-	}	
 }
 ?>
