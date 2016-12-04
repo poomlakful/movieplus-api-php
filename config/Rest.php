@@ -7,6 +7,10 @@ class Rest {
 	
 	private $httpVersion = "HTTP/1.1";
 
+	public function show_null() {
+		header('Content-Type: application/json');
+	}
+
 	public function show($raw_data) {
 		header('Content-Type: application/json');
 		echo json_encode($raw_data);		

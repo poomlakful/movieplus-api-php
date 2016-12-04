@@ -22,7 +22,7 @@ Class Showtime {
 		$this->time         = $showtime_time;
 		$this->director     = $showtime_director;
 		$this->language     = $showtime_language;
-		$this->showTime     = ["13.30", "15.00", "17.30", "20.00"];
+		$this->showTime     = array("13.30", "15.00", "17.30", "20.00");
 	}
 }
 ?>
