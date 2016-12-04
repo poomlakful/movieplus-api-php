@@ -24,11 +24,9 @@ Class ShowtimeHandler extends Rest {
 		        $item = new Showtime($row["shtid"], $row["tname"], $row["cid"], $row["mid"], $row["mname"], $row["poster"], $row["mtime"], $row["director"], $row["language"]);
 		        array_push($showtime_list,$item);
 		    }
-		} else {
-		    echo "0 results";
 		}
 		$conn->close();
-
+		
 		$this->show($showtime_list);
 	}
 }

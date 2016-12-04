@@ -17,8 +17,6 @@ Class MovieHandler extends Rest {
 		        $item = new Movie($row["mid"], $row["mname"], $row["detail"], $row["poster"], $row["trailer"], $row["type"], $row["mtime"], $row["director"], $row["status"]);
 		    	array_push($movie_list,$item);
 		    }
-		} else {
-		    echo "0 results";
 		}
 		$conn->close();
 
@@ -36,12 +34,11 @@ Class MovieHandler extends Rest {
 		        //echo "mid = ".$row["mid"]." : name = ".$row["mname"];
 		        $movie = new Movie($row["mid"], $row["mname"], $row["detail"], $row["poster"], $row["trailer"], $row["type"], $row["mtime"], $row["director"], $row["status"]);
 		    }
+			$this->show($movie);
 		} else {
-		    echo "0 results";
+			$this->show_null();
 		}
 		$conn->close();
-
-		$this->show($movie);
 	}
 }
 ?>
