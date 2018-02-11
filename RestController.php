@@ -1,4 +1,5 @@
 <?php
+require_once("core/Config.php");
 require_once("handler/MovieHandler.php");
 require_once("handler/ShowtimeHandler.php");
 		

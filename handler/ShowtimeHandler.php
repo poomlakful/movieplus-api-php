@@ -1,7 +1,7 @@
 <?php
-require_once("/config/Rest.php"); //Not use now
-require_once("/config/Connect.php");
-require_once("/model/Showtime.php");
+require_once(ROOT_PATH."/core/Rest.php");
+require_once(ROOT_PATH."/core/Connect.php");
+require_once(ROOT_PATH."/model/Showtime.php");
 
 Class ShowtimeHandler extends Rest {
 	public function find_all() {

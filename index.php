@@ -8,5 +8,10 @@
 </head>
 <body>
 	<h1>Hello, This is api for Movie Plus appliction</h1>
+	<ul>
+		<li>[GET] /movie</li>
+		<li>[GET] /movie/$id</li>
+		<li>[GET] /showtime/$id</li>
+	</ul>
 </body>
 </html>
